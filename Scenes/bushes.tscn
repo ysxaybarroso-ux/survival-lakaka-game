@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://2o1gdsn72ct2"]
+
+[ext_resource type="Texture2D" uid="uid://dxrfxh4qic5y0" path="res://Assets/bushes/bushes.png" id="1_i277x"]
+[ext_resource type="Script" uid="uid://pmelm36d13hy" path="res://bushes.gd" id="2_cf6j1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ep46m"]
+atlas = ExtResource("1_i277x")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e53sy"]
+atlas = ExtResource("1_i277x")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmpxy"]
+atlas = ExtResource("1_i277x")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0niy"]
+atlas = ExtResource("1_i277x")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgtm4"]
+atlas = ExtResource("1_i277x")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3bkj"]
+atlas = ExtResource("1_i277x")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gi00k"]
+atlas = ExtResource("1_i277x")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hnoby"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ep46m")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e53sy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rmpxy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0niy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qgtm4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3bkj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gi00k")
+}],
+"loop": 0,
+"name": &"Move",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i277x"]
+radius = 22.0
+
+[node name="bushes" type="AnimatedSprite2D" unique_id=1459952405]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_hnoby")
+animation = &"Move"
+script = ExtResource("2_cf6j1")
+
+[node name="enter_zone" type="Area2D" parent="." unique_id=875682440]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enter_zone" unique_id=1698450255]
+shape = SubResource("CircleShape2D_i277x")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
+[connection signal="body_entered" from="enter_zone" to="." method="_on_enter_zone_body_entered"]
+[connection signal="body_exited" from="enter_zone" to="." method="_on_enter_zone_body_exited"]

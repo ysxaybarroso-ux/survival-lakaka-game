@@ -3,6 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://c5rdk7f06i5fh" path="res://Assets/brackeys_platformer_assets/brackeys_platformer_assets/sprites/slime_purple.png" id="1_r040p"]
 [ext_resource type="Script" uid="uid://cs72ml4l7g417" path="res://Scripts/enemy_base.gd" id="2_cs1oe"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ir14n"]
+radius = 111.0045
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_cs1oe"]
 atlas = ExtResource("1_r040p")
 region = Rect2(0, 48, 24, 24)
@@ -151,32 +154,45 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hnoby"]
-radius = 9.0
+radius = 10.049875
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ir14n"]
-radius = 76.00658
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvhnc"]
+size = Vector2(12, 9)
 
-[node name="Enemy_base" type="AnimatedSprite2D" unique_id=1371171604]
-position = Vector2(0, -12)
-sprite_frames = SubResource("SpriteFrames_ir14n")
-animation = &"Sleep"
-autoplay = "Sleep"
+[node name="Enemy_base" type="CharacterBody2D" unique_id=565501534]
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("2_cs1oe")
 
-[node name="death_zone" type="Area2D" parent="." unique_id=896078417]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="death_zone" unique_id=24741556]
-position = Vector2(0, 7)
-shape = SubResource("CircleShape2D_hnoby")
-
 [node name="wake_up_zone" type="Area2D" parent="." unique_id=1940555927]
+position = Vector2(0, -12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wake_up_zone" unique_id=881209550]
 position = Vector2(0, 7)
 shape = SubResource("CircleShape2D_ir14n")
 
-[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
-[connection signal="body_entered" from="death_zone" to="." method="_on_death_zone_body_entered"]
-[connection signal="body_exited" from="death_zone" to="." method="_on_death_zone_body_exited"]
+[node name="Enemy_base" type="AnimatedSprite2D" parent="." unique_id=1371171604]
+position = Vector2(0, -12)
+sprite_frames = SubResource("SpriteFrames_ir14n")
+animation = &"Sleep"
+autoplay = "Sleep"
+
+[node name="death_zone" type="Area2D" parent="." unique_id=896078417]
+position = Vector2(0, -12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="death_zone" unique_id=24741556]
+position = Vector2(0, 7)
+shape = SubResource("CircleShape2D_hnoby")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1083939418]
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_kvhnc")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1782442248]
+
 [connection signal="body_entered" from="wake_up_zone" to="." method="_on_wake_up_zone_body_entered"]
 [connection signal="body_exited" from="wake_up_zone" to="." method="_on_wake_up_zone_body_exited"]
+[connection signal="animation_finished" from="Enemy_base" to="Enemy_base" method="_on_animation_finished"]
+[connection signal="animation_finished" from="Enemy_base" to="." method="_on_enemy_base_animation_finished"]
+[connection signal="body_entered" from="death_zone" to="." method="_on_death_zone_body_entered"]
+[connection signal="body_exited" from="death_zone" to="." method="_on_death_zone_body_exited"]

@@ -2,9 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bkjuwbbvbsdcq" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://b1jorc3el0vho" path="res://Assets/brackeys_platformer_assets/brackeys_platformer_assets/sprites/knight.png" id="1_v0iea"]
+[ext_resource type="PackedScene" uid="uid://tqq4cr37nc6k" path="res://Scenes/player_life.tscn" id="2_6t5aa"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_83xs0"]
-height = 24.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i6g32"]
+size = Vector2(14, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cvnsp"]
 atlas = ExtResource("1_v0iea")
@@ -225,10 +226,18 @@ radius = 17.117243
 
 [node name="Player" type="CharacterBody2D" unique_id=225977500]
 z_index = 100
+collision_mask = 3
 script = ExtResource("1_cvnsp")
 
+[node name="TextureProgressBar" parent="." unique_id=40395606 instance=ExtResource("2_6t5aa")]
+offset_left = -15.0
+offset_top = -38.0
+offset_right = 17.0
+offset_bottom = -6.0
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=827225513]
-shape = SubResource("CapsuleShape2D_83xs0")
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_i6g32")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1181997038]
 position = Vector2(0, -3)

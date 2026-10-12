@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://du18blmkyjutb"]
+
+[ext_resource type="Script" uid="uid://c4qd0kio3mrs2" path="res://Inventory/Item/Item.gd" id="1_xgxmu"]
+[ext_resource type="Texture2D" uid="uid://cepn6a72kjvh7" path="res://Assets/object/material/rock_icon.png" id="2_psymc"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u0i2t"]
+load_path = "res://.godot/imported/object_one.png-3a9902b0db545a6d19bf13844905ee3b.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ir14n"]
+size = Vector2(34, 30)
+
+[node name="Stone" type="Area2D" unique_id=93732204]
+script = ExtResource("1_xgxmu")
+item_name = "rock"
+icon = ExtResource("2_psymc")
+is_stackable = 5
+type = "Material"
+effect = "none"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=870029156]
+position = Vector2(5.9604645e-07, 3.5762787e-07)
+scale = Vector2(1.0625, 0.93750006)
+texture = SubResource("CompressedTexture2D_u0i2t")
+region_enabled = true
+region_rect = Rect2(128.11552, 0.02943492, 32.354248, 32.02884)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=118829858]
+shape = SubResource("RectangleShape2D_ir14n")

@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bo21sbfy7d2rj"]
+
+[ext_resource type="Script" uid="uid://ducct8qc8phrk" path="res://Inventory/inventory_canva.gd" id="1_2aw4r"]
+[ext_resource type="Script" uid="uid://iyj6xbk2jf02" path="res://Inventory/inventory.gd" id="1_uov6c"]
+[ext_resource type="PackedScene" uid="uid://buubkjk5fbfx5" path="res://Inventory/inventory_slot.tscn" id="2_xqyry"]
+[ext_resource type="PackedScene" uid="uid://dqhcpcj6cj3bk" path="res://Inventory/tooltip.tscn" id="3_88mhb"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1782239947]
+script = ExtResource("1_2aw4r")
+
+[node name="Inventory" type="Control" parent="." unique_id=800423726 node_paths=PackedStringArray("inventory_grid", "tooltip")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("1_uov6c")
+inventory_grid = NodePath("CenterContainer/GridContainer")
+inventory_slot_scene = ExtResource("2_xqyry")
+tooltip = NodePath("Tooltip")
+
+[node name="Panel" type="Panel" parent="Inventory" unique_id=1219452171]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="CenterContainer" type="CenterContainer" parent="Inventory" unique_id=1852130270]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="GridContainer" type="GridContainer" parent="Inventory/CenterContainer" unique_id=1131414498]
+layout_mode = 2
+theme_override_constants/h_separation = 60
+theme_override_constants/v_separation = 60
+columns = 8
+
+[node name="Tooltip" parent="Inventory" unique_id=1121863847 instance=ExtResource("3_88mhb")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 206.0
+offset_bottom = 60.0
+color = Color(0, 0, 0, 0.8156863)

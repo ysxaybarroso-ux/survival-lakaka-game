@@ -8,6 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://ga1g3xebc7uq" path="res://Assets/bush (2).png" id="5_1l0tm"]
 [ext_resource type="Texture2D" uid="uid://ddnpy8m1v60mi" path="res://Assets/bush.png" id="5_v158k"]
 [ext_resource type="PackedScene" uid="uid://2o1gdsn72ct2" path="res://Scenes/bushes.tscn" id="8_v158k"]
+[ext_resource type="PackedScene" uid="uid://du18blmkyjutb" path="res://Inventory/Item/material/stone.tscn" id="9_h4fw4"]
+[ext_resource type="PackedScene" uid="uid://devcuj32wjt2x" path="res://Inventory/Item/material/card_board.tscn" id="10_ldgsr"]
+[ext_resource type="PackedScene" uid="uid://luh6ahj82i8" path="res://Inventory/Item/useable/fire_cracker.tscn" id="10_rku1e"]
+[ext_resource type="PackedScene" uid="uid://cfn6j7x3uupil" path="res://Inventory/Item/useable/bottle.tscn" id="11_o5yvi"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ir14n"]
 vertices = PackedVector2Array(-62.976563, 439.0078, -62.789063, 420.20313, -29.3125, 368.6797, 184, 280.8203, 209.02344, 272.54688, 449.59375, 747.78906, -62.976563, 448.54688, -525.9375, 168, -374.96875, 154.10938, 194.0625, 232, 139.99219, 232, -510.78906, 180.20313, -520, 177.17969, -685.3125, 160.67969, -388.3828, 151.77344, -580.0078, 168, -694.96875, 170.10938, -695.1406, 165.45313, -414.97656, 416.54688, -414.97656, 407.0078, -414.78906, 388.20313, -52.382813, 375.77344, -38.96875, 378.10938, -132.00781, 408, -397.42188, 148.67969, -61.421875, 372.6797, 209.02344, 263.0078, 209.21094, 244.20313, 408.3672, -96.11719, -510.97656, 199.00781, 131.65625, 237.8125, -510.97656, 208.54688, -61.570313, 352.97656, -64.90625, 355.71875, -333.3125, 352.6797, -334.1797, 341.22656, -403.1797, 141.15625, -686.1797, 149.22656, -67.17969, 365.15625, -342.96875, 362.10938, 183.09375, 280, -30.179688, 357.22656, 132.09375, 280, -536.90625, 216, -536, 215.75, -536, 216.82031, 184, 279.75, -440.90625, 424, -440, 423.75, -440, 424.8203, -88.90625, 456, -88, 455.75, -88, 456.8203, -205.3125, 464.6797, -139.90625, 456, -214.96875, 474.10938, -215.14063, 469.45313, -343.14063, 357.45313, -140.10938, 440, -206.17969, 453.22656, -140.34375, 440, -685.3125, 416.6797, -492.34375, 408, -492.10938, 408, -491.90625, 424, -694.96875, 426.10938, -695.1406, 421.45313, -445.3125, 592.6797, -454.96875, 602.1094, -455.14063, 597.4531, -446.1797, 581.22656, -715.77344, 392, -588.34375, 200, -588.1094, 200, -587.90625, 216, -693.7422, 392, 131.65625, 264, 131.89063, 264, -686.1797, 405.22656, -492.34375, 381.8125, -37.742188, 344, -59.773438, 344, -341.7422, 328, -453.7422, 568, -140.34375, 413.8125, -213.74219, 440, 200, 241.17969, 194.36719, 240.17188, -525.6172, 176.17188, -424, 385.1797, -429.6172, 384.17188, -429.9375, 376, -72, 417.1797, -77.61719, 416.17188, -77.9375, 408, -365.3125, 144.67969, -366.1797, 133.22656, 200, 241.70313, -920.25, -118.859375, -373.7422, 120, -400.90625, 131.71875, -693.7422, 136, -520, 177.70313, -424, 385.70313, -72, 417.70313, -484.0078, 376, -375.14063, 149.45313, -39.140625, 373.45313, -363.77344, 328, -365.5703, 336.97656, -368.90625, 339.71875, -371.1797, 349.15625, -947.72656, 714.1875, -468.3828, 599.77344, -477.42188, 596.6797, -483.1797, 589.15625, -480.90625, 579.71875, -395.77344, 120, -397.5703, 128.97656, -715.77344, 136, -717.5703, 144.97656, -720.90625, 147.71875, -723.1797, 157.15625, -717.4219, 164.67969, -708.3828, 167.77344, -723.1797, 413.15625, -720.90625, 403.71875, -356.3828, 359.77344, -365.42188, 356.6797, -475.77344, 568, -228.38281, 471.77344, -237.42188, 468.6797, -243.17969, 461.15625, -240.90625, 451.71875, -717.5703, 400.97656, -235.77344, 440, -237.57031, 448.97656, -477.5703, 576.97656, -708.3828, 423.77344, -717.4219, 420.6797, -588.34375, 173.8125)
@@ -557,3 +561,48 @@ position = Vector2(-139, 288)
 
 [node name="bushes32" parent="bushes" unique_id=1231648248 instance=ExtResource("8_v158k")]
 position = Vector2(-123, 288)
+
+[node name="material" type="Node2D" parent="." unique_id=1516141951]
+
+[node name="stone" type="Node2D" parent="material" unique_id=1623353208]
+
+[node name="Stone" parent="material/stone" unique_id=93732204 instance=ExtResource("9_h4fw4")]
+position = Vector2(24, 208)
+
+[node name="Stone2" parent="material/stone" unique_id=2145297335 instance=ExtResource("9_h4fw4")]
+position = Vector2(-14, 216)
+
+[node name="Sprite2D" parent="material/stone/Stone2" index="0" unique_id=870029156]
+position = Vector2(75.999985, -7.999996)
+scale = Vector2(1.0625, 0.9374999)
+region_rect = Rect2(95.26123, 0.14934039, 32.354248, 32.02884)
+
+[node name="CollisionShape2D" parent="material/stone/Stone2" index="1" unique_id=118829858]
+position = Vector2(76, -8)
+
+[node name="FireCracker" type="Node2D" parent="material" unique_id=2073168386]
+
+[node name="FireCracker2" parent="material/FireCracker" unique_id=1702398621 instance=ExtResource("10_rku1e")]
+position = Vector2(-1, 292)
+
+[node name="FireCracker" parent="material/FireCracker" unique_id=1917722152 instance=ExtResource("10_rku1e")]
+position = Vector2(6, 292)
+
+[node name="Bottle" type="Node2D" parent="material" unique_id=2066239869]
+
+[node name="Bottle" parent="material/Bottle" unique_id=814722109 instance=ExtResource("11_o5yvi")]
+position = Vector2(32, 290)
+
+[node name="CardBoard" type="Node2D" parent="material" unique_id=1499374344]
+
+[node name="CardBoard" parent="material/CardBoard" unique_id=2102318296 instance=ExtResource("10_ldgsr")]
+position = Vector2(33, 250)
+
+[node name="CardBoard2" parent="material/CardBoard" unique_id=1260590492 instance=ExtResource("10_ldgsr")]
+position = Vector2(89, 248)
+
+[node name="Sprite2D" parent="material/CardBoard/CardBoard2" index="0" unique_id=1829382581]
+region_rect = Rect2(0.2507305, 32.296432, 32.21199, 32.078033)
+
+[editable path="material/stone/Stone2"]
+[editable path="material/CardBoard/CardBoard2"]

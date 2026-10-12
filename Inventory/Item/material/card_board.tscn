@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://devcuj32wjt2x"]
+
+[ext_resource type="Script" uid="uid://c4qd0kio3mrs2" path="res://Inventory/Item/Item.gd" id="1_h25jl"]
+[ext_resource type="Texture2D" uid="uid://d1f3gke8dmyw1" path="res://Assets/object/consumable/cardboard_icon.png" id="2_v6r88"]
+[ext_resource type="Texture2D" uid="uid://dtlal7ykmyw66" path="res://Assets/object/object_one.png" id="3_n676y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hnoby"]
+size = Vector2(16, 16)
+
+[node name="CardBoard" type="Area2D" unique_id=2102318296]
+script = ExtResource("1_h25jl")
+item_name = "CardBoard"
+icon = ExtResource("2_v6r88")
+is_stackable = 1
+type = "Material"
+effect = "none"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1829382581]
+position = Vector2(-2.3841858e-07, 0)
+scale = Vector2(0.5625, 0.5625)
+texture = ExtResource("3_n676y")
+region_enabled = true
+region_rect = Rect2(255.81694, 0, 32.21199, 32.078033)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1237797631]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_hnoby")

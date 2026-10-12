@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cfn6j7x3uupil"]
+
+[ext_resource type="Script" uid="uid://c4qd0kio3mrs2" path="res://Inventory/Item/Item.gd" id="1_kr0np"]
+[ext_resource type="Texture2D" uid="uid://bjoyybgrsr64g" path="res://Assets/object/food/bottle_of_water_icon.png" id="2_3ok66"]
+[ext_resource type="Texture2D" uid="uid://dtlal7ykmyw66" path="res://Assets/object/object_one.png" id="3_3ok66"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ir14n"]
+size = Vector2(16, 19)
+
+[node name="Bottle" type="Area2D" unique_id=814722109]
+script = ExtResource("1_kr0np")
+item_name = "Bottle of water"
+icon = ExtResource("2_3ok66")
+is_stackable = 6
+type = "Consumable"
+effect = "Thirst"
+effect_amount = 40
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=567208774]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_ir14n")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1287537925]
+position = Vector2(-2.9802322e-08, 0.5000015)
+scale = Vector2(0.49999997, 0.59375)
+texture = ExtResource("3_3ok66")
+region_enabled = true
+region_rect = Rect2(0, 0, 32.23561, 32.0665)

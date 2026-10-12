@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bp2qcoab5o1pn"]
+
+[ext_resource type="Script" uid="uid://ceeprx1u0apwc" path="res://Inventory/Item/inventory_item.gd" id="1_a1wiy"]
+
+[node name="InventoryItem" type="Control" unique_id=90391522 node_paths=PackedStringArray("sprite", "label")]
+layout_mode = 3
+anchor_right = 0.058000002
+anchor_bottom = 0.108
+offset_right = 0.18399811
+offset_bottom = -11.984001
+script = ExtResource("1_a1wiy")
+sprite = NodePath("Sprite2D")
+label = NodePath("Label")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1744929959]
+
+[node name="Label" type="Label" parent="." unique_id=1667347329]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

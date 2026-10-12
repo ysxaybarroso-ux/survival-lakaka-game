@@ -4,8 +4,11 @@ class_name Player
 @onready var health_bar: TextureProgressBar = $TextureProgressBar
 @onready var health_bar_anim: AnimatedSprite2D = $TextureProgressBar/AnimatedSprite2D
 
-	
+
+var nearby_collectible = null
 var health = 10.0
+var thirst = 100.0
+var hunger = 100.0
 const SPEED = 250.0
 var in_bush = 0
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
@@ -13,7 +16,7 @@ var in_bush = 0
 func _ready() -> void:
 		health_bar.max_value = health
 		health_bar.value = health
-		
+		InventoryManager.item_used.connect(_on_item_used)
 		
 func animation_player(direction_x, direction_y):
 	if direction_x or direction_y:
@@ -32,7 +35,11 @@ func take_dammage(amount):
 		health_bar_anim.play("mid")
 	elif health >= 7:
 		health_bar_anim.play("full")
-
+		
+func _on_item_used(effect: String, amount: float) -> void:
+	if effect == "Thirst":
+		thirst = min(thirst + amount, 100.0)
+		
 func _physics_process(_delta: float) -> void:
 	var direction_x := Input.get_axis("Left", "Right")
 	var direction_y := Input.get_axis("Up", "Down")
@@ -59,3 +66,19 @@ func _physics_process(_delta: float) -> void:
 		self.animated_sprite_2d.flip_h = false
 
 	move_and_slide()
+
+
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("interact") and nearby_collectible and !InventoryManager.is_open:
+		InventoryManager.add_item(nearby_collectible, 1)
+		nearby_collectible = null
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Items"):
+		nearby_collectible = area
+
+
+
+func _on_area_2d_area_exited(area: Area2D) -> void:
+	if area.is_in_group("Items"):
+		nearby_collectible = null 

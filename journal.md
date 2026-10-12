@@ -10,8 +10,23 @@ __but i also start the sprite as i will need tons of SPRITES but i want to make 
 __yes in fact i pass a lot of hour on drawing the **sprite** ( a long task i struggle with)
 today i learn the **LOS system** : it's use to encounter the fact that if you are in the enemy zone but behind an obstacle he will chase you and run face to face with the wall/obstacle so it use a system of a **raycast** to see if the player is visible or not it allow the obstacle problem but also like that the player can play by being discret.
 and i finish by making a **bush** system that allow the player to hide in them and be **invisible** to the enemy.__
- ![nav illustation](/git_assets/nav_agent.png") 
+ ![nav illustation]("/git_assets/nav_agent.png") 
 
 ### i finish by telling the future update:
-* maybe the player basic sprite
+* maybe the player basic sprite 
 * the start of the inv
+
+# 11/10/2026 a lot of drawings again! and a new inventory system with litle thing add!
+## in fact i pass like the most of the time making the sprite ( i want to make it all by myself) and learn to do shadow ect for the future
+**but yeah i just finish the inventory with basic item made**
+### BUT
+#### i add a new type of item the "consumable one!!" with a bottle of water but i draw the future consumable even the FIRECRACKER a vogue object in france these day!!!
+### i help myself with a tutorial but i modify thing for consumable object :
+#### (here's the link to the tuto)[https://gameidea.org/2024/08/26/make-inventory-system-in-godot/]
+
+### anyways the future update!:
+* telling you a bit about the lore
+* making object for food and equipement item
+* making the the short inventory to the bottom of the screen
+* the food thirst and temperature bar somewhere
+*bye byee <3*

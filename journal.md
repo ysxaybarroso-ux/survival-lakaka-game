@@ -41,4 +41,11 @@ __so so so... hmm " telling you a bit about the lore" hmmm sorry i didn't work o
 * the food and the thirst bar hehe done it did it looking a bit like subnautica one! ...yeah i know i don't make the temperature one but it's for the comming commit hehe ( like 2h or 1h of draw and 1h of coding)
 * other! ... i make the hand system !!! i just use this system to make the item equiped fit in the hand of the player depending the animation so i do not recreat sprite for each i use an animation play to make the item(sprite node2d) fit the hand (time estimated the long and despair and harsh hour of my life)*
 * i pass 1h at school to simplify my code than thousand of if and 1H on my pc at home ( my code still veryyyy messy)
-* i try to preshot the future equipment system while doing all that but one thing that lost me is that i can't found the way i want the 2 to be
+* i try to preshot the future equipment system while doing all that but one thing that lost me is that i can't found the way i want the 2d to look like
+
+  anywayss these day France is kinda becoming something as someone who participate but the next imrpovement will be:
+  * the first equipement item finish
+  * maybe the first  animals
+  * the object to screach ressources in
+  * maybe a bit more about the lore!!
+  * 

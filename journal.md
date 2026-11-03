@@ -30,3 +30,15 @@ and i finish by making a **bush** system that allow the player to hide in them a
 * making the the short inventory to the bottom of the screen
 * the food thirst and temperature bar somewhere
 *bye byee <3*
+
+#04/11/2026 heyyy i'm becoming a real pixel art drawer ehheh 
+##i may have pass 10h or more on the draw of the game but i don't commit only because i draw but i guess next time i will do it ! 
+*so from the last time i went though a lot of thing (in my actual country but also in coding and drawing)*
+__so so so... hmm " telling you a bit about the lore" hmmm sorry i didn't work on this aghhh__
+###for the rest
+* i make and draw object for some food (modern one in france like "tasty crousty") and equiment only one (likely 10h of draws and 3h of coding or maybe 2h?)
+* i make the short inv hehe the hotbar is work with using the item because yeah we can interact in inventory and hotbar the item (took like 3 or 2h of code)
+* the food and the thirst bar hehe done it did it looking a bit like subnautica one! ...yeah i know i don't make the temperature one but it's for the comming commit hehe ( like 2h or 1h of draw and 1h of coding)
+* other! ... i make the hand system !!! i just use this system to make the item equiped fit in the hand of the player depending the animation so i do not recreat sprite for each i use an animation play to make the item(sprite node2d) fit the hand (time estimated the long and despair and harsh hour of my life)*
+* i pass 1h at school to simplify my code than thousand of if and 1H on my pc at home ( my code still veryyyy messy)
+* i try to preshot the future equipment system while doing all that but one thing that lost me is that i can't found the way i want the 2 to be

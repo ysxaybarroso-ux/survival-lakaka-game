@@ -15,6 +15,7 @@ is_stackable = 6
 type = "Consumable"
 effect = "Thirst"
 effect_amount = 40
+weapon_type = "None"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=567208774]
 position = Vector2(0, 1)

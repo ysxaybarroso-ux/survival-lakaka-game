@@ -19,6 +19,7 @@ var cible = null
 @onready var agent: NavigationAgent2D = $NavigationAgent2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	add_to_group("enemy")
 	await get_tree().physics_frame
 	animation_controler()
 

@@ -13,8 +13,6 @@ var slots: Array[InventorySlot]
 
 @export var tooltip : Tooltip
 
-static var selected_item: InventoryItem = null
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	inventory_grid.columns = cols
@@ -29,14 +27,18 @@ func _ready() -> void:
 
 
 func _on_slot_input(which: InventorySlot, actions: InventorySlot.InventorySlotAction):
-	if not selected_item:
+	if not InventoryManager.selected_item:
 		if actions == InventorySlot.InventorySlotAction.SELECT:
-			selected_item = which.select_item()
+			InventoryManager.selected_item = which.select_item()
 		elif actions == InventorySlot.InventorySlotAction.SPLIT:
-			selected_item = which.split_item()
+			InventoryManager.selected_item = which.split_item()
+			
+		if InventoryManager.selected_item:
+			InventoryManager.selected_origin = which
 	else:
-		selected_item = which.deselect_item(selected_item)
-
+		InventoryManager.selected_item = which.deselect_item(InventoryManager.selected_item)
+		if not InventoryManager.selected_item:
+			InventoryManager.selected_origin = null
 func _on_slot_hovered(which: InventorySlot , is_hovering : bool):
 	if is_hovering:
 		hovered_slot = which
@@ -55,15 +57,19 @@ func _unhandled_input(event: InputEvent) -> void:
 		InventoryManager.is_open = visible
 		if not visible:
 			hovered_slot = null
+			if InventoryManager.selected_item and InventoryManager.selected_origin:
+				InventoryManager.selected_origin.deselect_item(InventoryManager.selected_item)
+				InventoryManager.selected_item = null
+				InventoryManager.selected_origin = null
 	elif event.is_action_pressed("interact") and visible and hovered_slot != null:
 		hovered_slot.use_item()
 		get_viewport().set_input_as_handled()
 
 func _process(_delta: float) -> void:
 	tooltip.global_position = get_global_mouse_position() + Vector2.ONE * 8
-	if selected_item:
+	if InventoryManager.selected_item:
 		tooltip.visible = true
-		selected_item.global_position = get_global_mouse_position()
+		InventoryManager.selected_item.global_position = get_global_mouse_position()
 
 
 func add_item(item: Item, amount: int) -> bool:

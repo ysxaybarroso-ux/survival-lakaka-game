@@ -159,7 +159,7 @@ radius = 10.049875
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kvhnc"]
 size = Vector2(12, 9)
 
-[node name="Enemy_base" type="CharacterBody2D" unique_id=565501534]
+[node name="Enemy_base" type="CharacterBody2D" unique_id=565501534 groups=["enemy"]]
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("2_cs1oe")
@@ -168,7 +168,7 @@ script = ExtResource("2_cs1oe")
 position = Vector2(0, -12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wake_up_zone" unique_id=881209550]
-position = Vector2(0, 7)
+position = Vector2(-10, 37)
 shape = SubResource("CircleShape2D_ir14n")
 
 [node name="Enemy_base" type="AnimatedSprite2D" parent="." unique_id=1371171604]
@@ -192,7 +192,7 @@ shape = SubResource("RectangleShape2D_kvhnc")
 
 [connection signal="body_entered" from="wake_up_zone" to="." method="_on_wake_up_zone_body_entered"]
 [connection signal="body_exited" from="wake_up_zone" to="." method="_on_wake_up_zone_body_exited"]
-[connection signal="animation_finished" from="Enemy_base" to="Enemy_base" method="_on_animation_finished"]
 [connection signal="animation_finished" from="Enemy_base" to="." method="_on_enemy_base_animation_finished"]
+[connection signal="animation_finished" from="Enemy_base" to="Enemy_base" method="_on_animation_finished"]
 [connection signal="body_entered" from="death_zone" to="." method="_on_death_zone_body_entered"]
 [connection signal="body_exited" from="death_zone" to="." method="_on_death_zone_body_exited"]

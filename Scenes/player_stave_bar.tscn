@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bqjmwiglwt4fy"]
+
+[ext_resource type="Texture2D" uid="uid://ctev2huiey35" path="res://Assets/lives_bar/thirst_bg.png" id="1_fqg17"]
+[ext_resource type="Texture2D" uid="uid://bl1qqrm52mp3j" path="res://Assets/lives_bar/thirst_progress.png" id="2_fqg17"]
+[ext_resource type="Texture2D" uid="uid://clyd0xa6kl6jy" path="res://Assets/lives_bar/pointe.png" id="3_dhicy"]
+[ext_resource type="Texture2D" uid="uid://pm5rynp5iy8y" path="res://Assets/lives_bar/thirst_center.png" id="4_fqg17"]
+
+[node name="ThirstBar" type="TextureProgressBar" unique_id=52133348]
+custom_minimum_size = Vector2(-1, -1)
+offset_right = 512.0
+offset_bottom = 512.0
+scale = Vector2(0.25, 0.25)
+fill_mode = 4
+texture_under = ExtResource("1_fqg17")
+texture_progress = ExtResource("2_fqg17")
+
+[node name="Pivot" type="Node2D" parent="." unique_id=734861264]
+position = Vector2(256, 256)
+
+[node name="Pointe" type="Sprite2D" parent="Pivot" unique_id=819609521]
+position = Vector2(2, -188.09949)
+rotation = 1.5707964
+scale = Vector2(1.0226786, 1)
+texture = ExtResource("3_dhicy")
+
+[node name="center" type="Sprite2D" parent="." unique_id=853946994]
+position = Vector2(256, 256)
+texture = ExtResource("4_fqg17")

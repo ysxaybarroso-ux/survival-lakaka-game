@@ -115,7 +115,7 @@ func split_item() -> InventoryItem:
 		new_item.set_data(
 			self.item.item_name, self.item.icon,
 			self.item.is_stackable, self.item.amount, 
-			self.effect , self.effect_amount, self.type
+			self.item.effect , self.item.effect_amount, self.item.type
 		)
 		new_item.amount = self.item.amount / 2
 		self.item.amount -= new_item.amount
@@ -135,7 +135,10 @@ func use_item() -> void:
 		item.amount -= 1
 		if item.amount <= 0:
 			remove_item()
-
+	elif item.type == "Equipment":
+		if item.amount > 0: #to be sure the usability the object is not broken
+			InventoryManager.equipment_used.emit(item.item_name, item.effect , item.effect_amount )
+			item.amount -= 1
 
 # Is slot empty (has no item)
 func is_empty():

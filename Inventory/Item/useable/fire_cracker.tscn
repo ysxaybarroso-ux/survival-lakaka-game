@@ -14,6 +14,7 @@ icon = ExtResource("2_s7ey1")
 is_stackable = 6
 type = "Equipement"
 effect = "none"
+weapon_type = "grenade"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2086313848]
 position = Vector2(0.9999999, -0.49999955)

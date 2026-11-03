@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://iyj6xbk2jf02" path="res://Inventory/inventory.gd" id="1_uov6c"]
 [ext_resource type="PackedScene" uid="uid://buubkjk5fbfx5" path="res://Inventory/inventory_slot.tscn" id="2_xqyry"]
 [ext_resource type="PackedScene" uid="uid://dqhcpcj6cj3bk" path="res://Inventory/tooltip.tscn" id="3_88mhb"]
+[ext_resource type="Script" uid="uid://dfxs224of5feb" path="res://Inventory/hot_bar.gd" id="5_spuu0"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=1782239947]
 script = ExtResource("1_2aw4r")
@@ -12,7 +13,7 @@ script = ExtResource("1_2aw4r")
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1152.0
-offset_bottom = 648.0
+offset_bottom = 536.0
 script = ExtResource("1_uov6c")
 inventory_grid = NodePath("CenterContainer/GridContainer")
 inventory_slot_scene = ExtResource("2_xqyry")
@@ -21,12 +22,12 @@ tooltip = NodePath("Tooltip")
 [node name="Panel" type="Panel" parent="Inventory" unique_id=1219452171]
 layout_mode = 0
 offset_right = 1152.0
-offset_bottom = 648.0
+offset_bottom = 536.0
 
 [node name="CenterContainer" type="CenterContainer" parent="Inventory" unique_id=1852130270]
 layout_mode = 0
 offset_right = 1152.0
-offset_bottom = 648.0
+offset_bottom = 536.0
 
 [node name="GridContainer" type="GridContainer" parent="Inventory/CenterContainer" unique_id=1131414498]
 layout_mode = 2
@@ -36,9 +37,41 @@ columns = 8
 
 [node name="Tooltip" parent="Inventory" unique_id=1121863847 instance=ExtResource("3_88mhb")]
 layout_mode = 0
-anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
 offset_right = 206.0
 offset_bottom = 60.0
 color = Color(0, 0, 0, 0.8156863)
+
+[node name="HotBar" type="Control" parent="." unique_id=2129315489 node_paths=PackedStringArray("inventory_grid")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 212.0
+offset_top = 557.0
+offset_right = 1019.0
+offset_bottom = 648.0
+script = ExtResource("5_spuu0")
+inventory_grid = NodePath("CenterContainer/GridContainer")
+inventory_slot_scene = ExtResource("2_xqyry")
+
+[node name="Panel" type="Panel" parent="HotBar" unique_id=1369459013]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.12100001
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.011000633
+
+[node name="CenterContainer" type="CenterContainer" parent="HotBar" unique_id=1240021082]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="HotBar/CenterContainer" unique_id=950719816]
+layout_mode = 2
+theme_override_constants/h_separation = 60
+theme_override_constants/v_separation = 60

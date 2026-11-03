@@ -16,6 +16,7 @@ icon = ExtResource("2_psymc")
 is_stackable = 5
 type = "Material"
 effect = "none"
+weapon_type = "None"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=870029156]
 position = Vector2(5.9604645e-07, 3.5762787e-07)

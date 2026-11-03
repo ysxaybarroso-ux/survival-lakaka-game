@@ -5,8 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://lbbka4gm5gie" path="res://Assets/tree-1.png.png" id="3_i6g32"]
 [ext_resource type="PackedScene" uid="uid://bnn128k55ky1r" path="res://Scenes/enemy_base.tscn" id="3_wrm1d"]
 [ext_resource type="Texture2D" uid="uid://bxkg24cxus0l1" path="res://Assets/rock_one.png" id="4_1l0tm"]
-[ext_resource type="Texture2D" uid="uid://ga1g3xebc7uq" path="res://Assets/bush (2).png" id="5_1l0tm"]
-[ext_resource type="Texture2D" uid="uid://ddnpy8m1v60mi" path="res://Assets/bush.png" id="5_v158k"]
 [ext_resource type="PackedScene" uid="uid://2o1gdsn72ct2" path="res://Scenes/bushes.tscn" id="8_v158k"]
 [ext_resource type="PackedScene" uid="uid://du18blmkyjutb" path="res://Inventory/Item/material/stone.tscn" id="9_h4fw4"]
 [ext_resource type="PackedScene" uid="uid://devcuj32wjt2x" path="res://Inventory/Item/material/card_board.tscn" id="10_ldgsr"]
@@ -265,153 +263,6 @@ texture = ExtResource("4_1l0tm")
 4:4/0 = 0
 4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 1.015255, -8, 1.015255, 2.775032, -8, 5.7531147)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o5yvi"]
-texture = ExtResource("5_v158k")
-3:6/0 = 0
-4:6/0 = 0
-5:6/0 = 0
-6:6/0 = 0
-7:6/0 = 0
-13:6/0 = 0
-14:6/0 = 0
-15:6/0 = 0
-16:6/0 = 0
-17:6/0 = 0
-2:7/0 = 0
-3:7/0 = 0
-4:7/0 = 0
-5:7/0 = 0
-6:7/0 = 0
-7:7/0 = 0
-8:7/0 = 0
-12:7/0 = 0
-13:7/0 = 0
-14:7/0 = 0
-15:7/0 = 0
-16:7/0 = 0
-17:7/0 = 0
-18:7/0 = 0
-1:8/0 = 0
-2:8/0 = 0
-3:8/0 = 0
-4:8/0 = 0
-5:8/0 = 0
-6:8/0 = 0
-7:8/0 = 0
-8:8/0 = 0
-11:8/0 = 0
-12:8/0 = 0
-13:8/0 = 0
-14:8/0 = 0
-15:8/0 = 0
-16:8/0 = 0
-17:8/0 = 0
-18:8/0 = 0
-1:9/0 = 0
-2:9/0 = 0
-3:9/0 = 0
-4:9/0 = 0
-5:9/0 = 0
-6:9/0 = 0
-7:9/0 = 0
-8:9/0 = 0
-11:9/0 = 0
-12:9/0 = 0
-13:9/0 = 0
-14:9/0 = 0
-15:9/0 = 0
-16:9/0 = 0
-17:9/0 = 0
-18:9/0 = 0
-1:15/0 = 0
-2:15/0 = 0
-3:15/0 = 0
-4:15/0 = 0
-5:15/0 = 0
-6:15/0 = 0
-7:15/0 = 0
-8:15/0 = 0
-11:15/0 = 0
-12:15/0 = 0
-13:15/0 = 0
-14:15/0 = 0
-15:15/0 = 0
-16:15/0 = 0
-17:15/0 = 0
-18:15/0 = 0
-0:16/0 = 0
-1:16/0 = 0
-2:16/0 = 0
-3:16/0 = 0
-4:16/0 = 0
-5:16/0 = 0
-6:16/0 = 0
-7:16/0 = 0
-8:16/0 = 0
-10:16/0 = 0
-11:16/0 = 0
-12:16/0 = 0
-13:16/0 = 0
-14:16/0 = 0
-15:16/0 = 0
-16:16/0 = 0
-17:16/0 = 0
-18:16/0 = 0
-0:17/0 = 0
-1:17/0 = 0
-2:17/0 = 0
-3:17/0 = 0
-4:17/0 = 0
-5:17/0 = 0
-6:17/0 = 0
-7:17/0 = 0
-8:17/0 = 0
-10:17/0 = 0
-11:17/0 = 0
-12:17/0 = 0
-13:17/0 = 0
-14:17/0 = 0
-15:17/0 = 0
-16:17/0 = 0
-17:17/0 = 0
-18:17/0 = 0
-0:18/0 = 0
-1:18/0 = 0
-2:18/0 = 0
-3:18/0 = 0
-4:18/0 = 0
-5:18/0 = 0
-6:18/0 = 0
-7:18/0 = 0
-8:18/0 = 0
-10:18/0 = 0
-11:18/0 = 0
-12:18/0 = 0
-13:18/0 = 0
-14:18/0 = 0
-15:18/0 = 0
-16:18/0 = 0
-17:18/0 = 0
-18:18/0 = 0
-0:19/0 = 0
-1:19/0 = 0
-2:19/0 = 0
-3:19/0 = 0
-4:19/0 = 0
-5:19/0 = 0
-6:19/0 = 0
-7:19/0 = 0
-8:19/0 = 0
-10:19/0 = 0
-11:19/0 = 0
-12:19/0 = 0
-13:19/0 = 0
-14:19/0 = 0
-15:19/0 = 0
-16:19/0 = 0
-17:19/0 = 0
-18:19/0 = 0
-
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_v158k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rku1e"]
@@ -421,25 +272,12 @@ texture = SubResource("CompressedTexture2D_v158k")
 0:1/0 = 0
 1:1/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rfjv2"]
-texture = ExtResource("5_1l0tm")
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-
 [sub_resource type="TileSet" id="TileSet_kq6tp"]
 physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 5
 sources/0 = SubResource("TileSetAtlasSource_h4fw4")
 sources/1 = SubResource("TileSetAtlasSource_ldgsr")
-sources/2 = SubResource("TileSetAtlasSource_o5yvi")
 sources/3 = SubResource("TileSetAtlasSource_rku1e")
-sources/4 = SubResource("TileSetAtlasSource_rfjv2")
 
 [node name="game" type="Node2D" unique_id=859899361]
 y_sort_enabled = true

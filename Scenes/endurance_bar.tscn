@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cwjc4jqeam2jp"]
+
+[ext_resource type="Texture2D" uid="uid://bqmie1wig1rvi" path="res://Assets/lives_bar/endurance_cover.png" id="1_43svf"]
+[ext_resource type="Texture2D" uid="uid://yb6niyi0w084" path="res://Assets/lives_bar/endurance_progress.png" id="2_bd2n4"]
+
+[node name="Endurance_bar" type="TextureProgressBar" unique_id=140632303]
+offset_right = 32.0
+offset_bottom = 32.0
+texture_under = ExtResource("1_43svf")
+texture_progress = ExtResource("2_bd2n4")

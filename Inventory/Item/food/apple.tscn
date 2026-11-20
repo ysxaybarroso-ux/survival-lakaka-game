@@ -2,19 +2,16 @@
 
 [ext_resource type="Script" uid="uid://c4qd0kio3mrs2" path="res://Inventory/Item/Item.gd" id="1_ntoyf"]
 [ext_resource type="Texture2D" uid="uid://cmqj6mc023p8o" path="res://Assets/object/food/apple_icon.png" id="2_aw48b"]
+[ext_resource type="Resource" uid="uid://kurwh2ov5j08" path="res://Inventory/Item/tres/food/Apple.tres" id="2_f4upl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hnoby"]
 radius = 18.0
 
 [node name="Apple" type="Area2D" unique_id=125984426]
 script = ExtResource("1_ntoyf")
+data = ExtResource("2_f4upl")
 item_name = "Apple"
-icon = ExtResource("2_aw48b")
-is_stackable = 6
-type = "Consumable"
-effect = "Hunger"
-effect_amount = 15
-weapon_type = "None"
+amount = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=894547662]
 position = Vector2(9.536743e-07, -9.536743e-07)

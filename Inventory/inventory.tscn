@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://ducct8qc8phrk" path="res://Inventory/inventory_canva.gd" id="1_2aw4r"]
 [ext_resource type="Script" uid="uid://iyj6xbk2jf02" path="res://Inventory/inventory.gd" id="1_uov6c"]
-[ext_resource type="PackedScene" uid="uid://buubkjk5fbfx5" path="res://Inventory/inventory_slot.tscn" id="2_xqyry"]
-[ext_resource type="PackedScene" uid="uid://dqhcpcj6cj3bk" path="res://Inventory/tooltip.tscn" id="3_88mhb"]
-[ext_resource type="Script" uid="uid://dfxs224of5feb" path="res://Inventory/hot_bar.gd" id="5_spuu0"]
+[ext_resource type="PackedScene" uid="uid://buubkjk5fbfx5" path="res://Inventory/slot/inventory_slot.tscn" id="2_xqyry"]
+[ext_resource type="PackedScene" uid="uid://dqhcpcj6cj3bk" path="res://Inventory/tooltip/tooltip.tscn" id="3_88mhb"]
+[ext_resource type="Script" uid="uid://dfxs224of5feb" path="res://Inventory/hotbar/hot_bar.gd" id="5_spuu0"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=1782239947]
 script = ExtResource("1_2aw4r")
@@ -21,18 +21,18 @@ tooltip = NodePath("Tooltip")
 
 [node name="Panel" type="Panel" parent="Inventory" unique_id=1219452171]
 layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 536.0
+offset_right = 1920.0
+offset_bottom = 851.0
 
 [node name="CenterContainer" type="CenterContainer" parent="Inventory" unique_id=1852130270]
 layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 536.0
+offset_right = 1920.0
+offset_bottom = 851.0
 
 [node name="GridContainer" type="GridContainer" parent="Inventory/CenterContainer" unique_id=1131414498]
 layout_mode = 2
-theme_override_constants/h_separation = 60
-theme_override_constants/v_separation = 60
+theme_override_constants/h_separation = 130
+theme_override_constants/v_separation = 100
 columns = 8
 
 [node name="Tooltip" parent="Inventory" unique_id=1121863847 instance=ExtResource("3_88mhb")]
@@ -57,21 +57,30 @@ inventory_slot_scene = ExtResource("2_xqyry")
 [node name="Panel" type="Panel" parent="HotBar" unique_id=1369459013]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.12100001
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -0.011000633
+anchor_left = -0.21300001
+anchor_top = 3.8020003
+anchor_right = 2.0640001
+anchor_bottom = 5.538
+offset_left = -0.10899353
+offset_top = 0.017974854
+offset_right = 0.3519287
+offset_bottom = 0.041992188
 
 [node name="CenterContainer" type="CenterContainer" parent="HotBar" unique_id=1240021082]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 10.0
+anchors_preset = -1
+anchor_left = -0.21300001
+anchor_top = 3.8020003
+anchor_right = 2.0640001
+anchor_bottom = 5.538
+offset_left = -0.10899353
+offset_top = 0.017974854
+offset_right = 0.3519287
+offset_bottom = 0.041992188
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="GridContainer" type="GridContainer" parent="HotBar/CenterContainer" unique_id=950719816]
 layout_mode = 2
-theme_override_constants/h_separation = 60
-theme_override_constants/v_separation = 60
+theme_override_constants/h_separation = 200
+theme_override_constants/v_separation = 140

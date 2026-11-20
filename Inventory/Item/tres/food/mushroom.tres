@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cgfewdumanev6"]
+
+[ext_resource type="Script" uid="uid://bue4y8mvon5lf" path="res://Inventory/Item/item_data.gd" id="1_8ns3i"]
+[ext_resource type="Texture2D" uid="uid://6v4rblh0xa4x" path="res://Assets/object/food/mushroom_icon.png" id="1_umxlx"]
+
+[resource]
+script = ExtResource("1_8ns3i")
+id = "mushroom"
+display_name = "Mushroom"
+icon = ExtResource("1_umxlx")
+hand_icon = ExtResource("1_umxlx")
+stack_size = 12
+effect = "Hunger"
+effect_amount = 5
+metadata/_custom_type_script = "uid://bue4y8mvon5lf"

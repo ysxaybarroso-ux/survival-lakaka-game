@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://hmv16mgj5q3g"]
+
+[ext_resource type="Texture2D" uid="uid://bjoyybgrsr64g" path="res://Assets/object/food/bottle_of_water_icon.png" id="1_apa0m"]
+[ext_resource type="Script" uid="uid://bue4y8mvon5lf" path="res://Inventory/Item/item_data.gd" id="1_s4gcr"]
+
+[resource]
+script = ExtResource("1_s4gcr")
+id = "Bottle of water"
+display_name = "bottle of water"
+icon = ExtResource("1_apa0m")
+hand_icon = ExtResource("1_apa0m")
+stack_size = 4
+effect = "Thirst"
+effect_amount = 40
+metadata/_custom_type_script = "uid://bue4y8mvon5lf"

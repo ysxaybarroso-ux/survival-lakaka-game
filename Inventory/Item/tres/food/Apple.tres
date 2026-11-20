@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://kurwh2ov5j08"]
+
+[ext_resource type="Script" uid="uid://bue4y8mvon5lf" path="res://Inventory/Item/item_data.gd" id="1_ma24r"]
+[ext_resource type="Texture2D" uid="uid://cmqj6mc023p8o" path="res://Assets/object/food/apple_icon.png" id="1_oyiwl"]
+
+[resource]
+script = ExtResource("1_ma24r")
+id = "apple"
+display_name = "Apple"
+icon = ExtResource("1_oyiwl")
+hand_icon = ExtResource("1_oyiwl")
+stack_size = 6
+effect = "Hunger"
+effect_amount = 20
+metadata/_custom_type_script = "uid://bue4y8mvon5lf"

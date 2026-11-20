@@ -5,14 +5,18 @@ const dammage = 1.0
 const SPEED = 80.0
 const SPEED_WANDER = 60.0
 var health = 5.0
-var state = "dodo"
+var state = "Sleep"
 var can_dammage = true
 var wander_direction = Vector2.ZERO
 var last_seen_pos = null
+var axis ="x"
+var direction = "up"
 var wander_time = 0.0
 var on_zone = false
 var player = null
+@export var sensibility : Dictionary[String,bool] 
 var cible = null
+@onready var enemy_area_anim: AnimationPlayer = $enemy_area_anim
 @onready var death_zone: Area2D = $death_zone
 @onready var wake_up_zone: Area2D = $wake_up_zone
 @onready var sprite : AnimatedSprite2D = $Enemy_base
@@ -26,24 +30,33 @@ func _ready() -> void:
 func move_to(point):
 	agent.target_position = point 
 	var next = agent.get_next_path_position()
-	velocity = SPEED * global_position.direction_to(next)
+	self.velocity = SPEED * direction_4(next)
 	
 func animation_controler():
-	if state == "degat":
-		sprite.play("Dammage")
-		
-	elif state == "dodo":
-		sprite.play("Sleep")
-	elif state == "reveil":
-		sprite.play("Wake up")
-	elif state == "reveillee":
-		sprite.play("Idle")
-	elif state == "go dodo":
-		sprite.play("Go sleep")
+	
+	var anim = state + "_" + direction if state not in ["Sleep","Dammage","Stun","Wake up","Go sleep"] else state
+	self.sprite.play(anim)
+	self.enemy_area_anim.play(direction)
+	
+func direction_4(target_pos: Vector2) -> Vector2:
+	var diff = target_pos - global_position
+	if abs(diff.x) < 4 and abs(diff.y) < 4:
+		return Vector2.ZERO
+	if self.axis == "x" and abs(diff.x) < 4:
+		self.axis = "y"
+	elif self.axis == "y" and abs(diff.y) < 4:
+		self.axis = "x"
+	if self.axis == "x":
+		self.direction = "right" if diff.x > 0 else "left"
+		return Vector2(sign(diff.x), 0)
+	else:
+		self.direction = "down" if diff.y > 0 else "up"
+		return Vector2(0, sign(diff.y))
+	
 	
 func take_dammage(amount):
 	health -= amount
-	state = "degat"
+	state = "Dammage"
 	if health <= 0:
 		self.queue_free()
 
@@ -52,7 +65,7 @@ func take_dammage(amount):
 func _physics_process(delta: float) -> void:
 	check_wake_up()
 	dps_controller()
-	if state not in ["dodo", "reveil" ,"go dodo"]:
+	if state not in ["Sleep", "Wake up" ,"Go sleep","Stun"]:
 		player_tracker(delta)
 	else:
 		velocity = Vector2.ZERO
@@ -94,9 +107,10 @@ func wander(delta):
 	velocity = SPEED_WANDER  * wander_direction
 	
 func dps_controller():
-	if on_zone and can_dammage and state not in ["dodo", "reveil"] and player != null:
+	if on_zone and can_dammage and state not in ["Sleep", "Wake up", "Go sleep","Dammage","Stun"] and player != null:
 		can_dammage = false
-		player.take_dammage(dammage)
+		self.state = "Attack"
+		player.take_dammage(dammage, "hand")
 		await get_tree().create_timer(2.0).timeout
 		can_dammage = true
 		
@@ -106,23 +120,30 @@ func _on_death_zone_body_entered(body: Node2D) -> void:
 		player = body
 
 func check_wake_up():
-	if state in ["reveil", "go dodo", "degat"]:
+	if state in ["Wake up", "Go sleep", "Dammage"]:
 		return
 	for body in wake_up_zone.get_overlapping_bodies():
 		if body is Player and can_see(body):
-			if state == "dodo":
-				state = "reveil"
+			if state == "Sleep":
+				state = "Wake up"
 				animation_controler()
-			cible = body
 
 
+func be_stun(time : float):
+	state = "Stun"
+	animation_controler()
+	print(state)
+	await get_tree().create_timer(time).timeout
+	state = "Sleep"
+	
+	
 func _on_wake_up_zone_body_exited(body: Node2D) -> void:
 	if body is Player:
 		cible = null
 		last_seen_pos = body.global_position
 		await get_tree().create_timer(8).timeout
 		if cible == null:
-			state = "go dodo"
+			state = "Go sleep"
 			animation_controler()
 
 
@@ -134,14 +155,28 @@ func _on_death_zone_body_exited(body: Node2D) -> void:
 
 func _on_enemy_base_animation_finished() -> void:
 	if sprite.animation == "Wake up":
-		state = "reveillee"
+		state = "Idle"
 		animation_controler()
 	if sprite.animation == "Dammage":
-		state = "reveil"
+		state = "Wake up"
 		animation_controler()
 	if sprite.animation == "Idle":
-		state = "reveillee"
+		state = "Idle"
 		animation_controler()
 	if sprite.animation == "Go sleep":
-		state = "dodo"
+		state = "Sleep"
+	if sprite.animation == "Attack":
+		state = "Idle"
+		animation_controler()
+
+
+
+func _on_eyes_area_body_entered(body: Node2D) -> void:
+	if body is Player:
+		cible = body
+
+
+func _on_wake_up_zone_body_entered(body: Node2D) -> void:
+	if body is Player and state == "Sleep" and can_see(body):
+		state = "Wake up"
 		animation_controler()

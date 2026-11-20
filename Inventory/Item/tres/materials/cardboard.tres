@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dsniwu6buugj5"]
+
+[ext_resource type="Texture2D" uid="uid://d1f3gke8dmyw1" path="res://Assets/object/consumable/cardboard_icon.png" id="1_nrhy1"]
+[ext_resource type="Script" uid="uid://bue4y8mvon5lf" path="res://Inventory/Item/item_data.gd" id="1_rh26y"]
+
+[resource]
+script = ExtResource("1_rh26y")
+id = "cardBoard"
+display_name = "CardBoard"
+icon = ExtResource("1_nrhy1")
+hand_icon = ExtResource("1_nrhy1")
+stack_size = 3
+type = "Materials"
+effect = "none"
+metadata/_custom_type_script = "uid://bue4y8mvon5lf"

@@ -25,7 +25,16 @@ func _ready() -> void:
 	tooltip.visible = false
 	visible = false
 
-
+func add_item_from_data(item: Item) -> bool:
+	var stack = item.to_stack()
+	var ok = add_item(item)
+	if ok and  stack != null:
+		for slot in slots:
+			if slot.item and slot.item.item_name == stack.data.display_name and slot.stack == null:
+				slot.item.stack = stack
+				print("slot rempli")
+				break
+	return ok
 func _on_slot_input(which: InventorySlot, actions: InventorySlot.InventorySlotAction):
 	if not InventoryManager.selected_item:
 		if actions == InventorySlot.InventorySlotAction.SELECT:
@@ -72,9 +81,9 @@ func _process(_delta: float) -> void:
 		InventoryManager.selected_item.global_position = get_global_mouse_position()
 
 
-func add_item(item: Item, amount: int) -> bool:
+func add_item(item: Item) -> bool:
 	var _item: InventoryItem = inventory_item_scene.instantiate()
-	_item.set_data(item.item_name, item.icon, item.is_stackable, amount, item.effect , item.effect_amount, item.type )
+	_item.set_data(item.item_name, item.icon, item.is_stackable, item.amount, item.effect , item.effect_amount, item.type, item.hand_icon, item.weapon_type, item.max_use)
 	if item.is_stackable > 0:
 		for slot in slots:
 			if slot.item and slot.item.item_name == _item.item_name and slot.item.amount < item.is_stackable :

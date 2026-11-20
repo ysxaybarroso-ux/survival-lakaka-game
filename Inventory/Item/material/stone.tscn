@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://du18blmkyjutb"]
 
 [ext_resource type="Script" uid="uid://c4qd0kio3mrs2" path="res://Inventory/Item/Item.gd" id="1_xgxmu"]
-[ext_resource type="Texture2D" uid="uid://cepn6a72kjvh7" path="res://Assets/object/material/rock_icon.png" id="2_psymc"]
+[ext_resource type="Resource" uid="uid://b1gptfehnmn54" path="res://Inventory/Item/tres/materials/stone.tres" id="2_psymc"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u0i2t"]
 load_path = "res://.godot/imported/object_one.png-3a9902b0db545a6d19bf13844905ee3b.ctex"
@@ -11,12 +11,8 @@ size = Vector2(34, 30)
 
 [node name="Stone" type="Area2D" unique_id=93732204]
 script = ExtResource("1_xgxmu")
-item_name = "rock"
-icon = ExtResource("2_psymc")
-is_stackable = 5
-type = "Material"
-effect = "none"
-weapon_type = "None"
+data = ExtResource("2_psymc")
+item_name = "Rock"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=870029156]
 position = Vector2(5.9604645e-07, 3.5762787e-07)

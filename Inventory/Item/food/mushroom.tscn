@@ -2,23 +2,20 @@
 
 [ext_resource type="Script" uid="uid://c4qd0kio3mrs2" path="res://Inventory/Item/Item.gd" id="1_fwble"]
 [ext_resource type="Texture2D" uid="uid://6v4rblh0xa4x" path="res://Assets/object/food/mushroom_icon.png" id="1_rq3yn"]
+[ext_resource type="Resource" uid="uid://cgfewdumanev6" path="res://Inventory/Item/tres/food/mushroom.tres" id="2_tm77g"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ir14n"]
-radius = 16.0
+radius = 10.049875
 
 [node name="Mushroom" type="Area2D" unique_id=1238472577]
+position = Vector2(0, 1)
 script = ExtResource("1_fwble")
+data = ExtResource("2_tm77g")
 item_name = "Mushroom"
-icon = ExtResource("1_rq3yn")
-is_stackable = 15
-type = "Consumable"
-effect = "Hunger"
-effect_amount = 8
-weapon_type = "None"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1477785847]
-position = Vector2(0, -2)
-scale = Vector2(0.875, 0.75000006)
+position = Vector2(-1.6940659e-21, -0.99999994)
+scale = Vector2(0.49999997, 0.46874994)
 texture = ExtResource("1_rq3yn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1152940681]

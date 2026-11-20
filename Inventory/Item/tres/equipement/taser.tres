@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://ku68kvqh3iev"]
+
+[ext_resource type="Texture2D" uid="uid://ctnqpvmpbqhma" path="res://Assets/Player/ammo/taser_face.png" id="1_uxpwa"]
+[ext_resource type="Script" uid="uid://bue4y8mvon5lf" path="res://Inventory/Item/item_data.gd" id="1_xp05a"]
+[ext_resource type="Texture2D" uid="uid://b4efxjr7w4m3c" path="res://Assets/object/equipment/taser.png" id="2_17cik"]
+
+[resource]
+script = ExtResource("1_xp05a")
+id = "taser"
+display_name = "Taser"
+icon = ExtResource("2_17cik")
+hand_icon = ExtResource("1_uxpwa")
+type = "Equipment"
+effect = "Stun"
+effect_amount = 3
+max_use = 20
+metadata/_custom_type_script = "uid://bue4y8mvon5lf"

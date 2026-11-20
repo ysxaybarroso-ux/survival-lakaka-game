@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bc3kbnidiba71"]
+
+[ext_resource type="Script" uid="uid://bue4y8mvon5lf" path="res://Inventory/Item/item_data.gd" id="1_2vgbb"]
+[ext_resource type="Texture2D" uid="uid://c3urmrsc3ssmg" path="res://Assets/object/consumable/firecracker_icon.png" id="1_ai2vx"]
+
+[resource]
+script = ExtResource("1_2vgbb")
+id = "Firecracker"
+display_name = "firecracker"
+icon = ExtResource("1_ai2vx")
+hand_icon = ExtResource("1_ai2vx")
+stack_size = 6
+effect = "fireworks"
+effect_amount = 7
+weapon_type = "grenade"
+metadata/_custom_type_script = "uid://bue4y8mvon5lf"

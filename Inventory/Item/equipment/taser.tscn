@@ -2,21 +2,20 @@
 
 [ext_resource type="Script" uid="uid://c4qd0kio3mrs2" path="res://Inventory/Item/Item.gd" id="1_68yfd"]
 [ext_resource type="Texture2D" uid="uid://b4efxjr7w4m3c" path="res://Assets/object/equipment/taser.png" id="2_37vmf"]
+[ext_resource type="Resource" uid="uid://ku68kvqh3iev" path="res://Inventory/Item/tres/equipement/taser.tres" id="2_l5gje"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ir14n"]
-radius = 19.0
 
 [node name="Taser" type="Area2D" unique_id=2082757989]
 script = ExtResource("1_68yfd")
+data = ExtResource("2_l5gje")
 item_name = "Taser"
-icon = ExtResource("2_37vmf")
-type = "Equipment"
-effect = "Stun"
-effect_amount = 8
-weapon_type = "1_hand_sword"
+amount = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1177563533]
 shape = SubResource("CircleShape2D_ir14n")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1328730692]
+position = Vector2(8.940697e-08, -2.9802322e-08)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_37vmf")

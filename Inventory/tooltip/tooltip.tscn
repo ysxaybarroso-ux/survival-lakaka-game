@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dqhcpcj6cj3bk"]
 
-[ext_resource type="Script" uid="uid://b3im3utm4k7pi" path="res://Inventory/tooltip.gd" id="1_2nuw7"]
+[ext_resource type="Script" uid="uid://b3im3utm4k7pi" path="res://Inventory/tooltip/tooltip.gd" id="1_2nuw7"]
 
 [node name="Tooltip" type="ColorRect" unique_id=1121863847]
 anchor_right = 0.035

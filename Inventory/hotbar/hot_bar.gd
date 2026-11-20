@@ -36,9 +36,9 @@ func _on_slot_input(which: InventorySlot, actions: InventorySlot.InventorySlotAc
 		InventoryManager.selected_item = which.deselect_item(InventoryManager.selected_item)
 		if not InventoryManager.selected_item:
 			InventoryManager.selected_origin = null
-func add_item(item: Item, amount: int) -> bool:
+func add_item(item: Item) -> bool:
 	var _item: InventoryItem = inventory_item_scene.instantiate()
-	_item.set_data(item.item_name, item.icon, item.is_stackable, amount, item.effect , item.effect_amount, item.type )
+	_item.set_data(item.item_name, item.icon, item.is_stackable, item.amount, item.effect , item.effect_amount, item.type, item.hand_icon ,item.weapon_type, item.max_use )
 	if item.is_stackable > 0:
 		for slot in slots:
 			if slot.item and slot.item.item_name == _item.item_name and slot.item.amount < item.is_stackable :

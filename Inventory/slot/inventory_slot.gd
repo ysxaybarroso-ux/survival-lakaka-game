@@ -5,6 +5,7 @@ class_name InventorySlot
 
 @export var item : InventoryItem
 @export var hint_item : InventoryItem = null 
+var stack: ItemStack = null
 
 enum InventorySlotAction{
 	SPLIT, SELECT, 
@@ -95,6 +96,8 @@ func deselect_item(new_item: InventoryItem) -> InventoryItem:
 	else : 
 		if has_same_item(new_item):
 			self.item.amount += new_item.amount
+			if self.item.stack != null:
+				self.item.stack.amount = self.item.amount
 			new_item.free()
 			return null
 		else:
@@ -115,10 +118,15 @@ func split_item() -> InventoryItem:
 		new_item.set_data(
 			self.item.item_name, self.item.icon,
 			self.item.is_stackable, self.item.amount, 
-			self.item.effect , self.item.effect_amount, self.item.type
+			self.item.effect , self.item.effect_amount, self.item.type,
+			self.item.hand_icon , self.item.weapon_type,
+			self.item.max_use
 		)
 		new_item.amount = self.item.amount / 2
 		self.item.amount -= new_item.amount
+		if self.item.stack != null:
+			new_item.stack = ItemStack.new(self.item.stack.data, new_item.amount)
+			self.item.stack.amount = self.item.amount
 		inventory.add_child(new_item)
 		new_item.z_index = 128
 		return new_item 
@@ -133,12 +141,22 @@ func use_item() -> void:
 	if item.type == "Consumable":
 		InventoryManager.item_used.emit(item.effect, item.effect_amount)
 		item.amount -= 1
+		if item.stack != null:
+			item.stack.amount = item.amount
 		if item.amount <= 0:
 			remove_item()
 	elif item.type == "Equipment":
-		if item.amount > 0: #to be sure the usability the object is not broken
-			InventoryManager.equipment_used.emit(item.item_name, item.effect , item.effect_amount )
-			item.amount -= 1
+		var useable = item.amount > 0#to be sure the usability the object is not broken
+		if item.stack != null:
+			useable = item.stack.uses_left > 0
+		if useable:
+			InventoryManager.equipment_used.emit(item.item_name,item.effect, item.effect_amount)
+			item.amount -=1
+			if item.stack != null :
+				item.stack.uses_left -= 1
+				if item.stack.uses_left <= 0:
+					item.fade()
+				
 
 # Is slot empty (has no item)
 func is_empty():

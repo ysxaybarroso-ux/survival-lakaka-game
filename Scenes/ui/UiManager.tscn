@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dnfqr4rwemi1v"]
+
+[ext_resource type="Script" uid="uid://cg46g36ru57wi" path="res://Scenes/ui/ui_manager.gd" id="1_ftpkn"]
+[ext_resource type="Script" uid="uid://b3im3utm4k7pi" path="res://Inventory/tooltip/tooltip.gd" id="1_v0b6u"]
+
+[node name="UiManager" type="CanvasLayer" unique_id=291824138]
+script = ExtResource("1_ftpkn")
+
+[node name="Loot_ui" type="Control" parent="." unique_id=735502929]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Player_Inv" type="CenterContainer" parent="Loot_ui" unique_id=1067380607]
+layout_mode = 0
+offset_right = 500.0
+offset_bottom = 648.0
+
+[node name="Inv_GridContainer" type="GridContainer" parent="Loot_ui/Player_Inv" unique_id=1989765038]
+layout_mode = 2
+
+[node name="Loot" type="CenterContainer" parent="Loot_ui" unique_id=2057126123]
+layout_mode = 0
+offset_left = 652.0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Loot_GridContainer" type="GridContainer" parent="Loot_ui/Loot" unique_id=2010121077]
+layout_mode = 2
+
+[node name="Player_Panel" type="Panel" parent="Loot_ui" unique_id=93816933]
+layout_mode = 0
+offset_right = 500.0
+offset_bottom = 648.0
+
+[node name="Loot_Panel" type="Panel" parent="Loot_ui" unique_id=63834054]
+layout_mode = 0
+offset_left = 652.0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Tooltip" type="ColorRect" parent="Loot_ui" unique_id=2057230673]
+layout_mode = 0
+offset_right = 87.0
+offset_bottom = 27.0
+color = Color(0.006466695, 0.0064666974, 0.0064666965, 0.5529412)
+script = ExtResource("1_v0b6u")
+metadata/_custom_type_script = "uid://b3im3utm4k7pi"

@@ -52,7 +52,7 @@ __so so so... hmm " telling you a bit about the lore" hmmm sorry i didn't work o
   * maybe a bit more about the lore!!
  
   # 20/11/2026 a lot of draw and the crew is growing up, the game is turning for big future!
-  ### hellowww these recent day i was fight again for my right but during these i meet a lot of great people and i told to some the project i have of making a game. So they join the will there is some people who want's to be the tester, one that want to help me drawing a few sprite and a friend who will help me with the music asset!!
+  ### hellowww these recent day i was fighting again for my rights but during these i met a lot of great people and i told  the project i have of making a game. So they join me!  there is some people who want's to be the tester, one that want to help me drawing a few sprite and a friend who will help me with the music asset!!
 __what i've done since 16days:__
 * i participate to hackclub atlantis!!
 * make the first equipement item! it's a *"taser*
@@ -62,6 +62,8 @@ __what i've done since 16days:__
 * wonder a lot about the lore i will make a days dedicate to.
 * start the save manager and to optimise(explaination below) the code as a big game can __grow on solid bases__!
 * rethink the animation_player on player and enemy (i will make a class for the comon function of living creature to optimize soon)
+
+
 __i'm quite sad that to learn i use claude ia that explain me the key point of how to make a scalable game and how to make a save manager. Only a few lines are wrote by it, anyways even if i earn time by doing this than to watch for likely 2h different tuto and doc. i want to try my best to priorise human made explication and make this game the most vivid possible with the art(it's obvious) and also the code having a human spirit! This is so much important for me and i kinda feel guilty every time i open claude__
 
 ## for the optimise!
